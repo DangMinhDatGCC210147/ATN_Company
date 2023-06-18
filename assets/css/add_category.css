@@ -1,0 +1,30 @@
+:root{
+    --Orange_yellow: #FFC93C;
+    --blue_light: #03e9f4;
+    --blue_heavy: #2C74B3;
+    --blue_neon: #5e98a2;
+    --white: #ffffff;
+    --black: #000000;
+    --green_heavy_gradient:#227c7064;
+    --green_light: #439a97d0;
+    --Orange: #FF7000;
+    --navy: #2B3467;
+  
+}
+.border{
+    border: 2px solid #2B3467 !important;
+    border-radius: 7px;
+    place-items: center;
+}
+.body{
+    padding: 60px 20% 60px 20%;
+}
+h1{
+    text-align: center;
+}
+
+/* Radio button */
+input[type="radio"]:checked {
+    /* Specify the desired color */
+    background-color: var(--navy); 
+}
