@@ -153,6 +153,16 @@ if (isset($_SESSION['user_id'])) {
     <div class="page-section section section-padding">
         <div class="container">
             <h3><?=$stmt1->rowCount()?> item(s)</h3>
+            <?php
+                if (isset($_SESSION['user_id'])) {
+                    $user_id = $_SESSION['user_id'];
+                        
+                    $sqlSelect2 = "SELECT * FROM cart WHERE user_id = ?";
+                    $stmt = $dblink->prepare($sqlSelect2);
+                    $stmt->execute([$user_id]);
+            
+                    if ($stmt->rowCount() > 0) {
+            ?>
             <form action="cart.php" method="POST">				
                 <div class="row mbn-40">
                     <div class="col-12 mb-40">
@@ -199,16 +209,7 @@ if (isset($_SESSION['user_id'])) {
                             </table>
                         </div>
                     </div>
-                    <?php
-                                if (isset($_SESSION['user_id'])) {
-                                    $user_id = $_SESSION['user_id'];
-                                       
-                                    $sqlSelect2 = "SELECT * FROM cart WHERE user_id = ?";
-                                    $stmt = $dblink->prepare($sqlSelect2);
-                                    $stmt->execute([$user_id]);
-                            
-                                    if ($stmt->rowCount() > 0) {
-                            ?>
+
                     <div class="col-lg-8 col-md-7 col-12 mb-40">
                         <div class="cart-buttons mb-30">
                             <input type="submit" name="update_cart" value="Update Cart">
