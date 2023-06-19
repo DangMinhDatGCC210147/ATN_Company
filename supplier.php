@@ -77,6 +77,8 @@
                                         $sqlUpdate = "UPDATE `supplier` SET `sup_name`=?,`sup_address`=? WHERE `sup_id` = ?";
                                         $stmt = $db_link->prepare($sqlUpdate);
                                         $execute = $stmt->execute(array("$cname","$caddress","$cid"));
+
+
                                         if($execute){
                                             echo '<script>
                                             Swal.fire({
@@ -150,7 +152,7 @@
           <td><?=$row['sup_address']?></td>
           <td>
             <a href="supplier.php?cid=<?=$row['sup_id']?>" class="button3 update">Update</a>
-            <a href="supplier.php?cid=<?=$row['sup_id']?>" class="button3 delete">Delete</a>
+            <a href="supplier.php?de_id=<?=$row['sup_id']?>" class="button3 delete">Delete</a>
         </td>
         </tr>
         <?php
@@ -165,8 +167,8 @@ include_once 'connect.php';
 $conn = new Connect();
 $db_link = $conn->connectToPDO();
 
-if(isset($_GET['cid'])):
-$value = $_GET['cid'];
+if(isset($_GET['de_id'])):
+$value = $_GET['de_id'];
 $sqlDelete = "DELETE FROM `supplier` WHERE `sup_id` = ?";
 $stmt = $db_link->prepare($sqlDelete);
 $stmt->execute(array("$value"));
