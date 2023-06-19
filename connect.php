@@ -7,15 +7,12 @@
 
         public function __construct()
         {
-            $this->server = "";
-            $this->user = "root";
-            $this->password = "";
-            $this->dbName = "wonderkid_world";
+            $this->server = "yjo6uubt3u5c16az.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+            $this->user = "o87wfefb3gnxn0wf";
+            $this->password = "wy80qa56nddrwg6z";
+            $this->dbName = "k4fcghoh6p7u3lym";
         }
-//yjo6uubt3u5c16az.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
-//o87wfefb3gnxn0wf
-//wy80qa56nddrwg6z
-//k4fcghoh6p7u3lym
+//
         //Option 1: Use mySQLi
 
         function connectToMySQL():mysqli{
