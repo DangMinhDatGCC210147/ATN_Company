@@ -13,6 +13,7 @@
             $this->dbName = "k4fcghoh6p7u3lym";
         }
 //
+//
         //Option 1: Use mySQLi
 
         function connectToMySQL():mysqli{

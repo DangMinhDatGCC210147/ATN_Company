@@ -34,16 +34,8 @@
                         $cid = $_POST['txtID'];
                         $cname = $_POST['txtName'];
                         $caddress = $_POST['txtAddress'];
-                        //Check duplicate value
-                        $conn = new Connect();
-                        $db_link = $conn->connectToMySQL();
-                        $query = "SELECT COUNT(*) as count FROM `supplier` WHERE `sup_id` = '$cid'";
-                        $re = $db_link->query($query);
-                        $row = $re->fetch_assoc();
-                        $count = $row['count'];
-
+ 
                         if(isset($_POST['btnAdd'])):
-
                                 $sqlInsert = "INSERT INTO `supplier`(`sup_name`, `sup_address`) VALUES (?,?)";
                                 $stmt = $db_link->prepare($sqlInsert);
                                 $execute = $stmt->execute(array("$cname","$caddress"));
@@ -92,11 +84,11 @@
                 endif;                
 ?>
 
-                <form id="form1" name="form1" method="POST" action="" class="form-horizontal" role="form">
+                <form id="form1" name="form1" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="form-horizontal" role="form">
                     <div class="form-group pb-3 pt-3">
                         <label for="txtTen" class="col-sm-2 control-label">Supplier Name:  </label>
                             <div class="col-sm-12">
-                                <input required type="text" name="txtID" id="txtID" class="form-control" placeholder="Supplier Name" value='<?php echo isset($_GET["cid"])?($_GET["cid"]):"";?>' hidden>
+                                <input type="text" name="txtID" id="txtID" class="form-control" placeholder="Supplier Name" value='<?php echo isset($_GET["cid"])?($_GET["cid"]):"";?>' hidden>
                                 <input required type="text" name="txtName" id="txtName" class="form-control" placeholder="Supplier Name" value='<?php echo isset($sup_name)?($sup_name):"";?>'>
                             </div>
                             <h6 style="font-style: italic; color: green; padding: 3px 0 0 10px; font-size: 13px">(*)Enter Supplier Name here</h6>
