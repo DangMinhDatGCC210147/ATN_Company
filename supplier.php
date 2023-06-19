@@ -43,13 +43,7 @@
                         $count = $row['count'];
 
                         if(isset($_POST['btnAdd'])):
-                            //     $pattern = '/^(C)\d{4}$/';
-                            //     $input = $_POST['txtID'];
-                            // if (preg_match($pattern, $input)):
-                                if ($count > 0) {
-                                        // Duplicate data found, handle the error
-                                        echo '<script>alert("Error: Duplicate data found!")</script>';
-                                }else{
+
                                 $sqlInsert = "INSERT INTO `supplier`(`sup_name`, `sup_address`) VALUES (?,?)";
                                 $stmt = $db_link->prepare($sqlInsert);
                                 $execute = $stmt->execute(array("$cname","$caddress"));
@@ -68,7 +62,7 @@
                                 }else{
                                         echo "Failed ".$execute;
                                 }
-                                }
+                                
                         //    else:
                         //         echo '<script>alert("Error")</script>';  
                         //    endif;
