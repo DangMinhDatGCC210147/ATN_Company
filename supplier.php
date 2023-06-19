@@ -108,7 +108,7 @@
                     <div class="form-group pb-3">
                             <label for="txtTen" class="col-sm-2 control-label">Supplier Address:  </label>
                             <div class="col-sm-12">
-                                <input required type="text" name="txtAddress" id="txtAddress" class="form-control" placeholder="Supplier Address" value='<?php echo isset($sup_name)?($sup_address):"";?>'>
+                                <input required type="text" name="txtAddress" id="txtAddress" class="form-control" placeholder="Supplier Address" value='<?php echo isset($sup_address)?($sup_address):"";?>'>
                             </div>
                             <h6 style="font-style: italic; color: green; padding: 3px 0 0 10px; font-size: 13px">(*) Enter Supplier Address here</h6>
                     </div>
