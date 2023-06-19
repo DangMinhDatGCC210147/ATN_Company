@@ -96,7 +96,7 @@ if (isset($_SESSION['user_id'])) {
 											</div>
 <!-- CHANGE PASSWORD -->
 									<!-- Account details form fields... -->
-                                    <div class="col-12 mb-30"><h4>Password change</h4></div>
+                                    <div class="col-12 mb-30"><h3>Password change</h3></div>
 								<form action="#" method="post">
                                     <div class="col-12 mb-30">
                                         <input name="current-pwd" placeholder="Current Password" type="password">
