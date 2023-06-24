@@ -33,19 +33,27 @@
                     $execute = $stmt->execute(array("$pro_id","$pro_name", "$pro_price", "$pro_des","$pro_qty","$imgs","$pro_date","$pro_cate_id","$pro_st_id","$sup_id"));
                     if($execute){
                         echo '<script>
-                                Swal.fire({
-                                    icon: "success",
-                                    title: "Success",
-                                    title: "Item added to cart successfully!",
-                                    showConfirmButton: false,
-                                    timer: 1500
-                                }).then(() => {
-                                    window.location.href = "add_product.php";
-                                });
-                                </script>';
+                        Swal.fire({
+                            icon: "success",
+                            title: "Success",
+                            title: "Item added to cart successfully!",
+                            showConfirmButton: false,
+                            timer: 1500
+                        }).then(() => {
+                            window.location.href = "add_product.php";
+                        });
+                        </script>';
                             // header("Location: add_product.php");
                     }else{
-                            echo "Failed ".$execute;
+                        echo '<script>
+                        Swal.fire({
+                            icon: "error",
+                            title: "Adding fail",
+                            title: "Item has not added to cart!",
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        </script>';
                     }
                 endif;
         endif;
