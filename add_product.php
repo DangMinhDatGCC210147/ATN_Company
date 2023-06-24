@@ -48,12 +48,12 @@
                         echo '<script>
                         Swal.fire({
                             icon: "error",
-                            title: "Adding fail",
-                            title: "Item has not added to cart!",
+                            title: "Oops...",
+                            text: "Item has not added!",
                             showConfirmButton: false,
                             timer: 1500
-                        })
-                        </script>';
+                        });
+                    </script>';
                     }
                 endif;
         endif;
